@@ -81,15 +81,15 @@ class Sorting {
         if left.count>1{
             output.append(contentsOf: quickSort(left))
         }else{
-            output.append(contentsOf: left)
+            output.append(contentsOf:  left)
         }
         output.append(pivot)
         if right.count>1{
             output.append(contentsOf: quickSort(right))
         }else{
-            output.append(contentsOf: right
+            output.append(contentsOf:  right)
         }
-     
+        
         return output
     }
 }

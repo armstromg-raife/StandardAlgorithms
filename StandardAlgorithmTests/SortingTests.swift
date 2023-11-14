@@ -31,7 +31,7 @@ final class SortingTests: XCTestCase {
 
 
             for testCase in testCases {
-                let result: ([Int]) = sorting.mergeSort(testCase.data)
+                let result: ([Int]) = sorting.mergeSort(array: testCase.data)
                 XCTAssertEqual(result, testCase.expected)
             }
         }
