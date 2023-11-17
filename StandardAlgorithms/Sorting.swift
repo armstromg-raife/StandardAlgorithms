@@ -9,20 +9,27 @@ import Foundation
 
 class Sorting {
     func bubbleSort(_ numbers: [Int]) -> [Int] {
-        if numbers[0] == 2{
-            return [1,2,3,4,7]
+        var array=numbers
+        var haveSwaped=true
+        while haveSwaped{
+            haveSwaped=false
+            for i in 1..<array.count{
+                if array[i-1]>array[i]{
+                    array.swapAt(i-1,i)
+                    haveSwaped=true
+                }
+            }
         }
-        return [1,3,4,5,7]
     }
-    
-    func mergeSort(array : [Int]) -> [Int]{
+        
+    func mergeSort(_ array : [Int]) -> [Int]{
         if array.count>1{
             let mid=array.count/2
             let leftArray: ([Int]) = Array(array[0..<mid])
             let rightArray: ([Int]) = Array(array[mid..<array.count])
             
-            let sortedLeft = mergeSort(array: leftArray)
-            let sortedRight = mergeSort(array: rightArray)
+            let sortedLeft = mergeSort(leftArray)
+            let sortedRight = mergeSort(rightArray)
             
             return merge(sortedLeft,sortedRight)
         }else{
@@ -72,16 +79,17 @@ class Sorting {
             }
         }
         if left.count>1{
-            return quickSort(left)
+            output.append(contentsOf: quickSort(left))
         }else{
-            return left
+            output.append(contentsOf: left)
         }
+        output.append(pivot)
         if right.count>1{
-            return quickSort(right)
+            output.append(contentsOf: quickSort(right))
         }else{
-            return right
+            output.append(contentsOf: right
         }
-        output
+     
         return output
     }
 }
