@@ -65,4 +65,20 @@ final class SortingTests: XCTestCase {
         }
         //assert
     }
+
+    func testInsertionSortWithManyShuffledArraysOfIntegersRerurnsArrayInAscendingOrder(){
+        //arrange
+        let sorting = Sorting()
+        
+        let testCases = [(data:[5,1,3,7,4],expected: [1,3,4,5,7]),(data:[2,1,3,7,4],expected: [1,2,3,4,7]),(data:[7,4],expected: [4,7])]
+        //act
+        for testCase in testCases{
+            var actual=testCase.data
+            sorting.insertionSort(&actual)
+            XCTAssertEqual(actual, testCase.expected)
+        }
+        //assert
+    }
+    
+
 }

@@ -93,4 +93,21 @@ class Sorting {
         
         return output
     }
+    func insertionSort(_ array: inout [Int]) {
+        let length = array.count
+        
+        for number in 1..<length {
+            let currentElement = array[number]
+            for i in (0..<number).reversed(){
+                if array[i] > currentElement {
+                    array[i + 1] = array[i]
+                    array[i]=currentElement
+                }else{
+                    break
+                }
+                
+            }
+        }
+    }
+            
 }
