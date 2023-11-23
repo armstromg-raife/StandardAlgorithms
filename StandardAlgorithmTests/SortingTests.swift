@@ -16,6 +16,7 @@ final class SortingTests: XCTestCase {
         let testCases = [(data:[5,1,3,7,4],expected: [1,3,4,5,7]),(data:[2,1,3,7,4],expected: [1,2,3,4,7]),(data:[7,4],expected: [4,7])]
         //act
         for testCase in testCases{
+            print(testCase)
             let actual = sorting.bubbleSort(testCase.data)
             XCTAssertEqual(actual, testCase.expected)
         }
@@ -31,7 +32,7 @@ final class SortingTests: XCTestCase {
 
 
             for testCase in testCases {
-                let result: ([Int]) = sorting.mergeSort(array: testCase.data)
+                let result: ([Int]) = sorting.mergeSort(testCase.data)
                 XCTAssertEqual(result, testCase.expected)
             }
         }
@@ -46,7 +47,7 @@ final class SortingTests: XCTestCase {
             //act
 
             for testCase in testCases {
-                let result = sorting.mergeSort(testCase.data)
+                _ = sorting.mergeSort(testCase.data)
             }
         }
     }

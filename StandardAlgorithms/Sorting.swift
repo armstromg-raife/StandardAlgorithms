@@ -20,6 +20,7 @@ class Sorting {
                 }
             }
         }
+        return array
     }
         
     func mergeSort(_ array : [Int]) -> [Int]{
